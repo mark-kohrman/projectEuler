@@ -13,5 +13,3 @@ function sumOfMultiples()
 }
 
 let finalSum = sumOfMultiples();
-
-//Project Euler Problem #2
