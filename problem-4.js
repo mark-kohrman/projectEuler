@@ -1,51 +1,36 @@
 //Project Euler Problem #1
 
-function largestPalindrome(multiplier,storage)
-{
-  let product = multiplier * storage;
-  let stopper = "go";
+function largestPalindrome(multiplier, decrementMultiplier) {
+  let product = multiplier * decrementMultiplier;
   while (multiplier > 899) {
-    storage = multiplier;
-    while (storage > 899) {
-      product = storage * multiplier;
-      product = product.toString();
+    decrementMultiplier = multiplier;
+    while (decrementMultiplier > 899) {
+      product = decrementMultiplier * multiplier;
+      let productString = product.toString();
+      let reversedProductString = reverseString(productString);
 
-      let reversedProduct = reverseString(product);
-
-      if (reversedProduct === product)
-      {
+      if (reversedProductString === productString) {
         console.log(product);
-        console.log("TRUE");
-        stopper = "stop";
-        break;
+        return product;
       }
-      if (stopper === "stop") {
-        break;  
-      }
-      storage --;
+      decrementMultiplier --;
     }
     multiplier --;
   }
-  
-  return product;
 }
 
 largestPalindrome(999,999);
 
-function reverseString(array)
-{
+function reverseString(productString) {
   let i = 0;
-  let j = array.length - 1;
-  let reversedArray = [];
-  array = array.split("");
+  let j = productString.length - 1;
+  let reversedString = "";
 
-  while (i < array.length) {
-    reversedArray.push(array[j]);
+  while (i < productString.length) {
+    reversedString += productString[j];
     j --;
     i ++;
   }
-
-  let reversedString = reversedArray.join("");
 
   return reversedString;
 }
