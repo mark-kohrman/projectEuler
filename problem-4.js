@@ -1,11 +1,10 @@
 //Project Euler Problem #1
 
 function largestPalindrome(multiplier, decrementMultiplier) {
-  let product = multiplier * decrementMultiplier;
   while (multiplier > 899) {
     decrementMultiplier = multiplier;
     while (decrementMultiplier > 899) {
-      product = decrementMultiplier * multiplier;
+      let product = decrementMultiplier * multiplier;
       let productString = product.toString();
       let reversedProductString = reverseString(productString);
 
