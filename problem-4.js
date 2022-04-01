@@ -1,4 +1,4 @@
-//Project Euler Problem #1
+//Project Euler Problem #4
 
 function largestPalindrome(multiplier, decrementMultiplier) {
   while (multiplier > 899) {
